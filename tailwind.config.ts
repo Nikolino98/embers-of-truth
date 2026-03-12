@@ -47,6 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        ember: "hsl(var(--ember))",
+        flame: "hsl(var(--flame))",
+        ash: "hsl(var(--ash))",
+        smoke: "hsl(var(--smoke))",
+        "plan-bronce": "hsl(var(--plan-bronce))",
+        "plan-plata": "hsl(var(--plan-plata))",
+        "plan-oro": "hsl(var(--plan-oro))",
+        "plan-diamante": "hsl(var(--plan-diamante))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,20 +73,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
