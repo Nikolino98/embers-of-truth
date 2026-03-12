@@ -14,6 +14,9 @@ interface PostCardProps {
 }
 
 export default function PostCard({ post, index }: PostCardProps) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = post.content.length > TRUNCATE_LENGTH;
+  const displayContent = isLong && !expanded ? post.content.slice(0, TRUNCATE_LENGTH) + '…' : post.content;
   const planStyles = applyPlanStyles(post.featured_data.is_featured ? post.featured_data.plan_id : null);
   const badge = post.featured_data.is_featured ? getPlanBadge(post.featured_data.plan_id) : null;
   const badgeClass = post.featured_data.is_featured ? getPlanBadgeClass(post.featured_data.plan_id) : '';
