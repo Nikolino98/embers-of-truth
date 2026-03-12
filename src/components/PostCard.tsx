@@ -1,9 +1,12 @@
-import { ThumbsUp, ThumbsDown, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { ThumbsUp, ThumbsDown, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 import { Post } from '@/lib/types';
 import { likePost, dislikePost, reportPost } from '@/lib/store';
 import { applyPlanStyles, getPlanBadge, getPlanBadgeClass } from '@/lib/planStyles';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+
+const TRUNCATE_LENGTH = 280;
 
 interface PostCardProps {
   post: Post;
