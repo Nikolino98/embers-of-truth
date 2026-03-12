@@ -49,7 +49,16 @@ export default function PostCard({ post, index }: PostCardProps) {
         </span>
       </div>
 
-      <p className="text-foreground/90 leading-relaxed mb-4 whitespace-pre-wrap">{post.content}</p>
+      <p className="text-foreground/90 leading-relaxed mb-2 whitespace-pre-wrap break-words">{displayContent}</p>
+      {isLong && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 mb-3 transition-colors"
+        >
+          {expanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+          {expanded ? 'Leer menos' : 'Leer más'}
+        </button>
+      )}
 
       <div className="flex items-center gap-1">
         <button
